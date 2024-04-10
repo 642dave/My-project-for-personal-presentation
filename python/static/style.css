@@ -45,6 +45,20 @@ header h1 {
     top: 2%;
 }
 
+.heading-main h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.heading-main h2:after {
+    content: '';
+    display: block;
+    width: 150px;
+    border-bottom: 2px solid #dc4f00;
+    margin: 20px auto;
+}
+
 /***** navigation *****/
 nav ul {
     float: right;
@@ -113,3 +127,5 @@ nav ul li a:active {
     background: #a93d00;
     border: 1px solid #a93d00;
 }
+
+/***** About us *****/
