@@ -129,3 +129,88 @@ nav ul li a:active {
 }
 
 /***** About us *****/
+.casino-example img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 4px 6px 10px #000;
+}
+
+/***** Our Casino *****/
+.casino-info img {
+    width: 100%;
+    height: 335px;
+    border-radius: 10px;
+    box-shadow: 4px 6px 10px #000;
+}
+
+.text-casino {
+    margin-bottom: 20px;
+}
+
+.text-casino div {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    text-align: center;
+    border-radius: 50%;
+    padding: 12px;
+    float: left;
+}
+
+.text-casino p {
+    margin-left: 60px;
+    font-size: 20px;
+}
+
+/***** Reference *****/
+.reference {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("static/images/casino_gallery3.png");
+}
+
+.reference h2 {
+    color: #fff;
+    padding-top: 40px;
+}
+
+.reference h2:after {
+    border-bottom: 2px solid #fff;
+}
+
+.one-reference {
+    color: #fff;
+    font-size: 20px;
+}
+
+.one-reference p {
+    font-style: italic;
+}
+
+.photo-name {
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.photo-name p {
+    padding: 13px;
+    margin-left: 60px;
+    font-style: normal;
+}
+
+.photo-name img {
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+}
+
+/***** Stop floating*****/
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
