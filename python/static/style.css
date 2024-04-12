@@ -9,6 +9,7 @@ header {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/background_image.png');
     background-size: cover;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 header h1 {
@@ -164,7 +165,8 @@ nav ul li a:active {
 
 /***** Reference *****/
 .reference {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("static/images/casino_gallery3.png");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("images/background_image.png");
+    background-attachment: fixed;
 }
 
 .reference h2 {
