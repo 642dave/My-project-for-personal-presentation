@@ -228,6 +228,44 @@ nav ul li a:active {
     zoom: 1
 }
 
+/***** Contact form *****/
+.contact-form {
+    width: 700px;
+    text-align: center;
+}
+
+.contact-form input {
+    width: 80%;
+    margin: 5px 0px;
+    padding: 7px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+
+}
+
+.contact-form textarea {
+    width: 80%;
+    margin: 5px 0px;
+    padding: 7px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    font-family: Arial;
+}
+
+input[type="submit"] {
+    background-color: #aa4309;
+    color: #fff;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+    transition: background-color 0.5s;
+    background-color: #d67e4d;
+    color: #000;
+}
+
 .clearfix:after {
     content: ".";
     clear: both;
