@@ -202,6 +202,27 @@ nav ul li a:active {
     float: left;
 }
 
+/***** Photo gallery *****/
+.photo-segment img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    transform: scale(1.15);
+}
+
+.photo-segment img:hover {
+    transition: transform 0.5s, opacity 0.5s;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.photo-segment li {
+    list-style-type: none;
+    background-color: #000;
+    overflow: hidden;
+    height: 100%;
+}
+
 /***** Stop floating*****/
 .clearfix {
     zoom: 1
