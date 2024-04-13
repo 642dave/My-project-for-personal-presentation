@@ -1,0 +1,112 @@
+@media only screen and (max-width: 1150px) {
+    .photo-segment {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .col.span-1-of-3.one-reference {
+        width: 49%;
+    }
+    
+    .one-reference:nth-child(3) {
+        display: none;
+    }
+
+     .casino-example img {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    
+    .casino-example .span-1-of-2 {
+        width: 48.3%;
+    }
+
+}
+
+@media only screen and (max-width: 860px) {
+
+    /***** Our pizza *****/
+    .pizza-info .span-1-of-2 {
+        width: 96%;
+    }
+
+    .pizza-info img {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .text-pizza p {
+        padding-top: 12px;
+    }
+}
+
+@media only screen and (max-width: 765px) {
+
+    /***** Our Casino *****/
+    .text-casino p {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+
+    /***** header *****/
+    .header-text {
+        width: 100%;
+        left: 0%;
+        transform: translate(0%, 0%);
+    }
+
+
+    .header-text h1 {
+        text-align: center;
+    }
+
+     .btn {
+       display: block;
+        text-align: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .btn-empty:link,
+    .btn-empty:visited {
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .photo-segment .col {
+        margin-left: 0;
+    }
+
+    .photo-segment li {
+        width: 100%;
+    }
+
+     .casino-example .span-1-of-2 {
+        width: 96%; 
+    }
+    
+    .casino-example .col {
+        margin-left: 0;
+    }
+    
+    .casino-example img {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+@media only screen and (max-width: 685px) {
+    .col.span-1-of-3.one-reference {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .photo-name {
+        float: right;
+        margin-right: 25px;
+    }
+}

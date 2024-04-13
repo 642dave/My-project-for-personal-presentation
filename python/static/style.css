@@ -225,14 +225,9 @@ nav ul li a:active {
     height: 100%;
 }
 
-/***** Stop floating*****/
-.clearfix {
-    zoom: 1
-}
-
 /***** Contact form *****/
 .contact-form {
-    width: 700px;
+    max-width: 700px;
     text-align: center;
 }
 
@@ -301,6 +296,11 @@ input[type="submit"]:hover {
 .footer-text {
     text-align: center;
     margin: 10px 0;
+}
+
+/***** Stop floating*****/
+.clearfix {
+    zoom: 1
 }
 
 .clearfix:after {
