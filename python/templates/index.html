@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="static/others/grid.css">
     <link rel="icon" type="image/png" href="static/images/casino_logo.png">
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="static/js/script.js"></script>
+
+
+
     <title>Casino</title>
 </head>
 <body>
@@ -23,18 +30,18 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Jedna</a></li>
-                    <li><a href="#">Dva</a></li>
-                    <li><a href="#">Tři</a></li>
-                    <li><a href="#">Čtyři</a></li>
-                    <li><a href="#">Pět</a></li>
+                    <li><a href="#" class="jq--scroll-our-casino">Our Casino</a></li>
+                    <li><a href="#" class="jq--scroll-photo-gallery">Photo Gallery</a></li>
+                    <li><a href="#" class="jq--scroll-about-our-casino">About our Casino</a></li>
+                    <li><a href="#" class="jq--scroll-references">References</a></li>
+                    <li><a href="#" class="jq--scroll-contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
     <main>
-        <section class="about-us row">
+        <section class="about-us row jq--our-casino">
             <div class="heading-main">
                 <h2>Our Casino</h2>
             </div>
@@ -48,7 +55,7 @@
             </div>
         </section>
         
-        <section class="photo-gallery">
+        <section class="photo-gallery jq--photo-gallery">
             <div class="heading-main">
                 <h2>We offer a brick and mortar casino with air-conditioned rooms with the company of beautiful waitresses or you can play
                 from the comfort of your home fully and without restrictions online</h2>
@@ -72,7 +79,7 @@
             </div>
         </section>
 
-        <section class="our-casino row">
+        <section class="our-casino row jq--about-our-casino">
             <div class="heading-main">
                 <h2>About our Casino</h2>
             </div>
@@ -107,7 +114,7 @@
             </div>
         </section>
 
-        <section class="reference">
+        <section class="reference jq--references">
             <div class="heading-main">
                 <h2>What our clients have said about us</h2>
             </div>
@@ -142,7 +149,7 @@
                 <h2>Ask for anything</h2>
             </div>
 
-            <form action="" class="contact-form row">
+            <form action="" class="contact-form row jq--contact">
                 <input type="text" placeholder="Name"><br>
                 <input type="text" placeholder="Surname"><br>
                 <input type="mail" placeholder="Email"><br>
@@ -163,7 +170,7 @@
                 <p><a href="https://www.instagram.com/" target="_blank">Instagram</a></p>
             </div>
             <div class="footer-text">
-                Copywrite &copy; 2020 Casino company. All rights reserved.
+                Copywrite &copy; 2024 Casino company. All rights reserved.
             </div>
         </div>
     </footer>
