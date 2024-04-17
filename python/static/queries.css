@@ -23,6 +23,60 @@
 
 }
 
+.col.span-1-of-3.one-reference {
+        width: 49%;
+    }
+    
+    .one-reference:nth-child(3) {
+        display: none;
+    }
+
+     .casino-example img {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    
+    .casino-example .span-1-of-2 {
+        width: 48.3%;
+    }
+
+@media only screen and (max-width: 1025px) {
+    nav ul li {
+        display: block;
+    }
+
+    .nav-background {
+        /*display: none;*/
+    }
+
+    .mobile-nav-back {
+        height: 200px;
+        position: fixed;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid #fff;
+        display: none;
+        z-index: 100;
+    }
+
+    .mobile-nav-icon {
+        display: inline-block;
+        z-index: 200;
+        position: fixed;
+        right: 2%;
+    }
+
+    nav ul {
+        display: none;
+        z-index: 200;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:active {
+    border-bottom: 2px solid transparent;
+    }
+}
+
 @media only screen and (max-width: 860px) {
 
     /***** Our pizza *****/

@@ -22,5 +22,28 @@
         $(".jq--scroll-contact").click(function () {
             $("html, body").animate({ scrollTop: $(".jq--contact").offset().top }, 1000);
         });
+
+        /* Mobile navigation */
+        $(".jq--nav-icon").click(function () {
+            console.log("Clicked!");
+            $(".nav-background").slideToggle();
+            $(".mobile-nav-back").fadeToggle();
+            $("nav ul").fadeToggle();
+        });
+
+
+        /* Change hamburger to cross vice versa */
+        $(".jq--image-hamburger").click(function () {
+            if ($(".jq--image-hamburger").attr("src") == "static/images/hamburger.png") {
+                $(".jq--image-hamburger").attr("src", "static/images/cross.png");
+            }
+            else {
+                $(".jq--image-hamburger").attr("src", "static/images/hamburger.png");
+            }
+        });
+
+
+
+
     });
 })(jQuery);
