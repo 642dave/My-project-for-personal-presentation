@@ -18,3 +18,49 @@ body {
     top: 10%;
     left: 2%;
 }
+
+/***** Registry form *****/
+#registry-title {
+    position: relative;
+    left: 38%;
+    max-width: 25%;
+    display: block;
+    top: 30%;
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    border-bottom: 2px solid #aa4309;
+}
+
+
+#reg-form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 700px;
+    text-align: center;
+}
+
+.registry-form input {
+    width: 80%;
+    margin: 5px 0px;
+    padding: 7px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px grey;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #aa4309;
+    color: #fff;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover {
+    transition: background-color 0.5s;
+    background-color: #d67e4d;
+    color: #000;
+}
