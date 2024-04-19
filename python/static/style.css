@@ -21,41 +21,6 @@ header {
     z-index: 50;
 }
 
-.login-input {
-    position: absolute;
-    top: 15%;
-    right: 1%;
-    transform: translate(-50%, -50%);
-}
-
-.login-form input {
-    width: 80%;
-    margin: 5px 0px;
-    padding: 7px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px grey;
-
-}
-
-.btn-log {
-    position: absolute;
-    top: 23%;
-    right: 8%;
-    transform: translate(-50%, -50%);
-}
-
-.btn-login {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
-    border: 1px solid #ff7c32;
-    border-radius: 10px;
-    margin-top: 7px;
-    padding: 5px 10px;
-    letter-spacing: 1px;
-}
-
 header h1 {
     color: white;
     font-size: 50px;
@@ -81,6 +46,26 @@ header h1 {
 .mobile-nav-icon {
     float: right;
     display: none;
+}
+
+.btn-log {
+    position: absolute;
+    top: 12%;
+    right: 2%;
+    transform: translate(-50%, -50%);
+}
+
+.button-login {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid #ff7c32;
+    border-radius: 10px;
+    margin-top: 7px;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /***** reusable *****/
