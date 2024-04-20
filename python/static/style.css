@@ -48,24 +48,41 @@ header h1 {
     display: none;
 }
 
-.btn-log {
+.login-text {
     position: absolute;
     top: 12%;
-    right: 2%;
+    right: 8%;
     transform: translate(-50%, -50%);
 }
 
-.button-login {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
+.login-text h2 {
+    color: white;
     font-size: 20px;
-    border: 1px solid #ff7c32;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+    border-bottom: 2px solid #fff;
+}
+
+.login-form {
+    position: absolute;
+    top: 22%;
+    right: 1.5%;
+    transform: translate(-50%, -50%);
+}
+
+.login-form {
+    max-width: 700px;
+    text-align: center;
+}
+
+.login-form input {
+    width: 80%;
+    margin: 5px 0px;
+    padding: 7px;
+    border: 2px solid #000;
     border-radius: 10px;
-    margin-top: 7px;
-    padding: 5px 10px;
-    letter-spacing: 1px;
-    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 5px grey;
 }
 
 /***** reusable *****/

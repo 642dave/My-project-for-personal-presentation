@@ -17,3 +17,18 @@ body {
     top: 10%;
     left: 2%;
 }
+
+#casino-text {
+    position: absolute;
+    top: 16%;
+    left: 17%;
+    transform: translate(-50%, -50%);
+}
+
+#casino-text h1 {
+    color: white;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+}
