@@ -4,6 +4,10 @@
         margin-right: 10px;
     }
 
+    nav .login-text {
+        right: 12%;
+    }
+
     .col.span-1-of-3.one-reference {
         width: 49%;
     }
@@ -164,3 +168,108 @@
         margin-right: 25px;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    nav .login-text {
+        right: 25%;
+    }
+    
+    nav .login-form {
+        right: 0.5%;
+    }
+
+    .photo-segment li {
+        width: 100%;
+    }
+
+    .photo-name {
+        float: right;
+        margin-right: 25px;
+    }
+
+    .photo-segment img {
+        width: 100%;
+    }
+
+    .photo-segment .col {
+        margin-left: 0;
+    }
+
+    .photo-segment .col:nth-child(2) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(3) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(4) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(5) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(6) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(7) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(8) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(9) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(10) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(11) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(12) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(13) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(14) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(15) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(16) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(17) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(18) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(19) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(20) {
+        display: none;
+    }
+
+    .photo-segment .col:nth-child(21) {
+        display: none

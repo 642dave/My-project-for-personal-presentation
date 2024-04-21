@@ -1,0 +1,12 @@
+@media only screen and (max-width: 500px) {
+    #casino-text {
+        left: 50%;
+        top: 17%;
+    }
+
+    #registry-title {
+        left: 25%;
+        top: 30%;
+        border-bottom: none;
+    }
+}
