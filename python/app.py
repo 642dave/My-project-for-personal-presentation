@@ -28,6 +28,20 @@ def register():
 
     return 'Registration successful!', 200
 
-if __name__ == '__main__':
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        player = Player(None, None, None, email, password)
+        if player.login_authentication():
+            return 'Login successful'
+        else:
+            return 'Login failed'
+    return render_template('login.html')
+
+if __name__ == "__main__":
     app.run(debug=True)
+
+
 

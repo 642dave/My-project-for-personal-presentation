@@ -1,3 +1,10 @@
+@media only screen and (max-width: 1200px) {
+    #casino-text {
+        left: 35%;
+        top: 17%;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     #casino-text {
         left: 50%;
