@@ -42,15 +42,19 @@
                     <h2>Login</h2>
                 </div>
 
-                <div>
-                    <form action="" method="post" class="login-form">
+                <div class="login-form">
+                    <form action="" method="post">
                         <input type="mail" name="email" placeholder="Email"><br>
                         <input type="password" name="password" placeholder="Password"><br>
                         <input type="submit" value="Submit">
                     </form>
+                    <div id="log-message">
+                        {% if message %}
+                        <p>{{ message }}</p>
+                        {% endif %}
+                    </div>
                 </div>
-
-
+                
                 <div class="mobile-nav-back"></div>
                 <a class="mobile-nav-icon jq--nav-icon"><img class="jq--image-hamburger" src="static/images/hamburger.png" alt="menu-symbol"></a>
             </nav>

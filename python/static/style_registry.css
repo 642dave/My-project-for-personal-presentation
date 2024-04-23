@@ -34,6 +34,10 @@ body {
     word-spacing: 3.5px;
 }
 
+#casino-text a {
+    text-decoration: none;
+}
+
 /***** Registry form *****/
 #registry-title {
     position: relative;

@@ -30,15 +30,16 @@ def register():
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
+    message = ''
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
         player = Player(None, None, None, email, password)
         if player.login_authentication():
-            return 'Login successful'
+            message = 'Login successful'
         else:
-            return 'Login failed'
-    return render_template('login.html')
+            message = 'Login failed'
+    return render_template('index.html', message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)
