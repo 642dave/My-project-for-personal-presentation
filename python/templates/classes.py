@@ -43,6 +43,7 @@ class Player:
             print(f'General error {e}')
         else:
             print('User successfully added')
+            return True
 
    # Get the hash from the database
     def get_hash_from_database(self):

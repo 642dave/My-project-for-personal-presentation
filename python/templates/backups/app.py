@@ -17,19 +17,16 @@ def blackjack():
 
 @app.route('/register', methods=['POST'])
 def register():
-    message = ''
-    if request.method == 'POST':
-        name = request.form['name']
-        surname = request.form['surname']
-        age = request.form['age']
-        email = request.form['email']
-        password = request.form['password']
-        player = Player(name, surname, age, email, password)
-        if player.insert_casino_player():
-            message = 'Registration successful!'
-        else:
-            message = 'Registration failed!'
-    return render_template('registry.html', message=message)
+    name = request.form['name']
+    surname = request.form['surname']
+    age = request.form['age']
+    email = request.form['email']
+    password = request.form['password']
+
+    player = Player(name, surname, age, email, password)
+    player.insert_casino_player()
+
+    return 'Registration successful!', 200
 
 @app.route('/', methods=['GET', 'POST'])
 def login():
@@ -46,6 +43,3 @@ def login():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
