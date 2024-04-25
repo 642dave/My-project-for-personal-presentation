@@ -34,15 +34,17 @@ def register():
 @app.route('/', methods=['GET', 'POST'])
 def login():
     message = ''
+    login_message = ''
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
         player = Player(None, None, None, email, password)
         if player.login_authentication():
             message = 'Login successful'
+            login_message = f'Player {email} logedd in!'
         else:
             message = 'Login incorrect'
-    return render_template('index.html', message=message)
+    return render_template('index.html', message=message, login_message=login_message)
 
 if __name__ == "__main__":
     app.run(debug=True)

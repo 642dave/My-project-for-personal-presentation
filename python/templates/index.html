@@ -54,6 +54,11 @@
                         {% endif %}
                     </div>
                 </div>
+                <div id="login-message">
+                    {% if login_message %}
+                    <p>{{ login_message }}</p>
+                    {% endif %}
+                </div>
                 
                 <div class="mobile-nav-back"></div>
                 <a class="mobile-nav-icon jq--nav-icon"><img class="jq--image-hamburger" src="static/images/hamburger.png" alt="menu-symbol"></a>

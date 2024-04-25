@@ -83,6 +83,3 @@ class Player:
                 return False
         except Exception as e:
             print(f'Error {e}')
-
-            
-
