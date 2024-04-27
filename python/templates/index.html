@@ -54,9 +54,12 @@
                         {% endif %}
                     </div>
                 </div>
-                <div id="login-message">
-                    {% if login_message %}
-                    <p>{{ login_message }}</p>
+        
+                <div id="logout-message">
+                    {% if session['logged_in'] %}
+                    <p>Welcome, player {{ session['nickname'] }}!   <a href="{{ url_for('log_out') }}">Log out</a> </p>
+                    {% else %}
+                    <!-- Zde můžete přidat obsah pro nepřihlášené uživatele -->
                     {% endif %}
                 </div>
                 

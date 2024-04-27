@@ -1,9 +1,12 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session
 from templates.classes import Player
-import os
+from flask import redirect, url_for
+import secrets
+
+secret_key = secrets.token_hex(16)
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY')
+app.secret_key = secret_key
 
 @app.route('/')
 def index():

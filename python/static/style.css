@@ -24,7 +24,7 @@ header {
 #login-message {
     position: absolute;
     top: 10%;
-    left: 10%;
+    left: 8%;
 }
 
 #login-message p {
@@ -113,6 +113,28 @@ header h1 {
     word-spacing: 3.5px;
 }
 
+#logout-message {
+    position: absolute;
+    top: 11%;
+    left: 8%;
+    text-align: center;
+}
+
+#logout-message p {
+    color: white;
+    font-size: 20px;
+    text-transform: lowercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+}
+
+#logout-message p a {
+    color: white;
+    text-decoration: none;
+    text-transform: lowercase;
+    border-bottom: 2px solid #fff;
+}
+
 /***** reusable *****/
 .row {
     max-width: 1140px;
@@ -120,7 +142,7 @@ header h1 {
 }
 
 #logo img {
-    width: 100px;
+    width: 50px;
     position: absolute;
     top: 10%;
     left: 2%;
