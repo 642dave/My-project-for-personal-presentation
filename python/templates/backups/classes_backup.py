@@ -2,9 +2,10 @@ import psycopg2, bcrypt
 
 # Creates a class for the player
 class Player:
-    def __init__(self, name, surname, age, email, password):
+    def __init__(self, name, surname, nickname, age, email, password):
         self.name = name
         self.surname = surname
+        self.nickname = nickname
         self.age = age
         self.email = email
         self.password = password
@@ -31,11 +32,11 @@ class Player:
             )
 
             cur = conn.cursor()
-            query = '''INSERT INTO casino_player (name, surname, age, email, password) VALUES (%s, %s, %s, %s, %s)'''
+            query = '''INSERT INTO casino_player (name, surname, nickname, age, email, password) VALUES (%s, %s, %s, %s, %s, %s)'''
 
             hash = self.password_to_hash(self.password)
 
-            cur.execute(query, (self.name, self.surname, self.age, self.email, hash))
+            cur.execute(query, (self.name, self.surname, self.nickname, self.age, self.email, hash))
             conn.commit()
             conn.close()
         except psycopg2.DatabaseError as e:
@@ -74,12 +75,12 @@ class Player:
         
     # Check if the user is in the database
     def login_authentication(self):
-        try:
-            hash = self.get_hash_from_database()
-            password_byte = bytes(self.password, 'utf-8')
-            if bcrypt.checkpw(password_byte, hash):
-                return True
-            else:
-                return False
-        except Exception as e:
-            print(f'Error {e}')
+         try:
+             hash = self.get_hash_from_database()
+             password_byte = bytes(self.password, 'utf-8')
+             if bcrypt.checkpw(password_byte, hash):
+                 return True
+             else:
+                 return False
+         except Exception as e:
+             print(f'Error {e}')

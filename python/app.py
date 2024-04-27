@@ -21,10 +21,11 @@ def register():
     if request.method == 'POST':
         name = request.form['name']
         surname = request.form['surname']
+        nickname = request.form['nickname']
         age = request.form['age']
         email = request.form['email']
         password = request.form['password']
-        player = Player(name, surname, age, email, password)
+        player = Player(name, surname, nickname, age, email, password)
         if player.insert_casino_player():
             message = 'Registration successful!'
         else:
@@ -38,12 +39,13 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        player = Player(None, None, None, email, password)
+        player = Player(None, None, None, None, email, password)
         if player.login_authentication():
             message = 'Login successful'
-            login_message = f'Player {email} logedd in!'
         else:
             message = 'Login incorrect'
+        nickname = player.nickname_from_database()
+        login_message = f'Welcome {nickname}!'
     return render_template('index.html', message=message, login_message=login_message)
 
 if __name__ == "__main__":
