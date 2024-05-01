@@ -85,7 +85,9 @@ input[type="submit"]:hover {
 }
 
 #reg-message {
+    position: relative;
+
+}#reg-message p {
     color: #fff;
-    font-size: 13px;
-    margin-top: 10px;
+    font-size: 20px;
 }

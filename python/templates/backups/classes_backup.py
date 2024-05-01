@@ -1,86 +1,58 @@
-import psycopg2, bcrypt
+from flask import Flask, render_template, request, session, redirect, url_for, flash
+from templates.classes import Player, RegistrationForm
+import os
 
-# Creates a class for the player
-class Player:
-    def __init__(self, name, surname, nickname, age, email, password):
-        self.name = name
-        self.surname = surname
-        self.nickname = nickname
-        self.age = age
-        self.email = email
-        self.password = password
+app = Flask(__name__)
+app.secret_key = os.environ.get('SECRET_KEY')
 
-    # Convert the password to a hash
-    def password_to_hash(self, password):
-        try:  
-            password_bytes = self.password.encode('utf-8')
-            hash = bcrypt.hashpw(password_bytes, bcrypt.gensalt())
-            return hash 
-        except Exception as e:
-            print(f'Password setting error {e}')
-            return None
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    # Inserts data from the user into the database
-    def insert_casino_player(self):
-        try:    
-            conn = psycopg2.connect(
-                dbname="casino_database",
-                user = "postgres",
-                password = "postgres",
-                host = "localhost",
-                port = "5433"
-            )
-
-            cur = conn.cursor()
-            query = '''INSERT INTO casino_player (name, surname, nickname, age, email, password) VALUES (%s, %s, %s, %s, %s, %s)'''
-
-            hash = self.password_to_hash(self.password)
-
-            cur.execute(query, (self.name, self.surname, self.nickname, self.age, self.email, hash))
-            conn.commit()
-            conn.close()
-        except psycopg2.DatabaseError as e:
-            print(f'Database error {e}')
-        except Exception as e:
-            print(f'General error {e}')
-        else:
-            print('User successfully added')
-            return True
-
-   # Get the hash from the database
-    def get_hash_from_database(self):
-        try:
-            conn = psycopg2.connect(
-                dbname="casino_database",
-                user = "postgres",
-                password = "postgres",
-                host = "localhost",
-                port = "5433"
-            )
-            cur = conn.cursor()
-            query = '''SELECT password FROM casino_player WHERE email = %s'''
-            cur.execute(query, (self.email,))
-            user_hash_password = cur.fetchone()
-            conn.close()
-
-            if user_hash_password:
-                return bytes.fromhex(user_hash_password[0][2:])  
+@app.route('/registry', methods=['GET', 'POST'])
+def register_form():
+    form = RegistrationForm()
+    message = session.pop('message', '')
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            player = Player(form.name.data, form.surname.data, form.nickname.data, form.age.data, form.email.data, form.password.data)
+            if player.insert_casino_player():
+                session['message'] = 'Registration successful!'
+                return redirect(url_for('register_form'))
             else:
-                return b''
-        except psycopg2.DatabaseError as e:
-            print(f'Database error {e}')    
-        except Exception as e:
-            print(f'General error {e}')
-            return b''
-        
-    # Check if the user is in the database
-    def login_authentication(self):
-         try:
-             hash = self.get_hash_from_database()
-             password_byte = bytes(self.password, 'utf-8')
-             if bcrypt.checkpw(password_byte, hash):
-                 return True
-             else:
-                 return False
-         except Exception as e:
-             print(f'Error {e}')
+                message = 'Registration failed!'
+    return render_template('registry.html', form=form, message=message)
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    message = ''
+    login_message = ''
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        player = Player(None, None, None, None, email, password)
+        if player.login_authentication():
+            message = 'Login successful'
+            session['logged_in'] = True
+            session['nickname'] = player.nickname_from_database()
+            login_message = f'Welcome {session["nickname"]}!'
+        else:
+            message = 'Login incorrect'
+    return render_template('index.html', message=message, login_message=login_message)
+
+@app.route('/blackjack')
+def blackjack():
+    return render_template('blackjack.html')
+
+@app.route('/logout')
+def log_out():
+     session.pop('logged_in', None)
+     session.pop('nickname', None)
+     return redirect(url_for('login'))
+
+if __name__ == "__main__":
+     app.run(debug=True)
+
+
+            
+

@@ -1,26 +1,27 @@
-import psycopg2, bcrypt
+import psycopg2
+import bcrypt
+from flask_wtf import FlaskForm
+from wtforms import StringField, IntegerField, EmailField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, Length
 
-# Creates a class for the player
 class Player:
-    def __init__(self, name, surname, nickname, age, email, password):
+    def __init__(self, name, surname, nickname, age, email, password_hash):
         self.name = name
         self.surname = surname
         self.nickname = nickname
         self.age = age
         self.email = email
-        self.password = password
+        self.password_hash = password_hash  
 
-    # Convert the password to a hash
-    def password_to_hash(self, password):
+    def password_to_hash(self):
         try:  
-            password_bytes = self.password.encode('utf-8')
+            password_bytes = self.password_hash.encode('utf-8')
             hash = bcrypt.hashpw(password_bytes, bcrypt.gensalt())
             return hash 
         except Exception as e:
             print(f'Password setting error {e}')
             return None
 
-    # Inserts data from the user into the database
     def insert_casino_player(self):
         try:    
             conn = psycopg2.connect(
@@ -32,9 +33,9 @@ class Player:
             )
 
             cur = conn.cursor()
-            query = '''INSERT INTO casino_player (name, surname, nickname, age, email, password) VALUES (%s, %s, %s, %s, %s, %s)'''
+            query = '''INSERT INTO casino_player (name, surname, nickname, age, email, password_hash) VALUES (%s, %s, %s, %s, %s, %s)'''
 
-            hash = self.password_to_hash(self.password)
+            hash = self.password_to_hash()
 
             cur.execute(query, (self.name, self.surname, self.nickname, self.age, self.email, hash))
             conn.commit()
@@ -47,7 +48,6 @@ class Player:
             print('User successfully added')
             return True
 
-   # Get the hash from the database
     def get_hash_from_database(self):
         try:
             conn = psycopg2.connect(
@@ -58,7 +58,7 @@ class Player:
                 port = "5433"
             )
             cur = conn.cursor()
-            query = '''SELECT password FROM casino_player WHERE email = %s'''
+            query = '''SELECT password_hash FROM casino_player WHERE email = %s'''
             cur.execute(query, (self.email,))
             user_hash_password = cur.fetchone()
             conn.close()
@@ -72,7 +72,7 @@ class Player:
         except Exception as e:
             print(f'General error {e}')
             return b''
-        
+
     def nickname_from_database(self):
         try:
             conn = psycopg2.connect(
@@ -96,19 +96,26 @@ class Player:
         except Exception as e:
             print(f'General error {e}')
             return ''
-        
-    # Check if the user is in the database
-    def login_authentication(self):
-         try:
-             hash = self.get_hash_from_database()
-             password_byte = bytes(self.password, 'utf-8')
-             if bcrypt.checkpw(password_byte, hash):
-                 return True
-             else:
-                 return False
-         except Exception as e:
-             print(f'Error {e}')
 
+    def login_authentication(self):
+        try:
+            hash = self.get_hash_from_database()
+            password_byte = bytes(self.password_hash, 'utf-8')
+            if bcrypt.checkpw(password_byte, hash):
+                return True
+            else:
+                return False
+        except Exception as e:
+            print(f'Error {e}')
+
+class RegistrationForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    surname = StringField('Surname', validators=[DataRequired()])
+    nickname = StringField('Nickname', validators=[DataRequired()])
+    age = StringField('Age', validators=[DataRequired()])
+    email = EmailField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
+    submit = SubmitField('Submit')
 
             
 
