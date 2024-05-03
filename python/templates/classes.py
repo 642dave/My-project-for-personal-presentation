@@ -2,7 +2,7 @@ import psycopg2
 import bcrypt
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, EmailField, PasswordField, SubmitField
-from wtforms.validators import DataRequired, Email, Length
+from wtforms.validators import DataRequired, Email, Length, NumberRange
 
 class Player:
     def __init__(self, name, surname, nickname, age, email, password_hash):
@@ -112,7 +112,7 @@ class RegistrationForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     surname = StringField('Surname', validators=[DataRequired()])
     nickname = StringField('Nickname', validators=[DataRequired()])
-    age = StringField('Age', validators=[DataRequired()])
+    age = IntegerField('Age', validators=[DataRequired(), NumberRange(min=18)])
     email = EmailField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=8)])
     submit = SubmitField('Submit')

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for, flash
+from flask import Flask, render_template, request, session, redirect, url_for
 from templates.classes import Player, RegistrationForm
 import os
 
@@ -9,6 +9,7 @@ app.secret_key = os.environ.get('SECRET_KEY')
 def index():
     return render_template('index.html')
 
+# Saves player data to the database
 @app.route('/registry', methods=['GET', 'POST'])
 def register_form():
     form = RegistrationForm()
@@ -23,6 +24,7 @@ def register_form():
                 message = 'Registration failed!'
     return render_template('registry.html', form=form, message=message)
 
+# Checks if the player is in the database
 @app.route('/', methods=['GET', 'POST'])
 def login():
     message = ''
@@ -44,6 +46,7 @@ def login():
 def blackjack():
     return render_template('blackjack.html')
 
+# Logs out the player
 @app.route('/logout')
 def log_out():
      session.pop('logged_in', None)
