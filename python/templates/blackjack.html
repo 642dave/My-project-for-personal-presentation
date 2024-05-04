@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <!--<link rel="stylesheet" href="static/queries_blackjack.css">-->
     <link rel="stylesheet" href="static/style_blackjack.css">
-    <link rel="icon" href="{{ url_for('static', filename='/images/casino_favicon.png') }}" type="image/x-icon">
-    <link rel="stylesheet" href="static/queries_blackjack.css">
-    <title>blackjack</title>
+    <!--<link rel="icon" href="{{ url_for('static', filename='/images/casino_favicon.png') }}" type="image/x-icon">-->
+    <script src="static/js/blackjack.js"></script>
 </head>
+
 <body>
     <div id="logo">
         <a href="http://127.0.0.1:5000/"><img src="static/images/casino_logo.png" alt=""></a>
@@ -16,6 +18,17 @@
     <div id="casino-text">
         <a href="http://127.0.0.1:5000/"><h1>CASINO</h1></a>
     </div>
+
+    <h2>Dealer: <span id="dealer-sum"></span></h2>
+    <div id="dealer-cards"></div>
+
+    <h2>You: <span id="your-sum"></span></h2>
+    <div id="your-cards"></div>
+
+    <br>
+    <button id="hit">Hit</button>
+    <button id="stay">Stay</button>
+    <p id="results"></p>
     
 </body>
 </html>
