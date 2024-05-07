@@ -4,8 +4,8 @@ let yourSum = 0;
 let dealerAceCount = 0;
 let yourAceCount = 0;
 
-let yourAccount = 1000;
-let yourBet = 100;
+let yourAccount = 0;
+let yourBet = 0;
 
 let hidden;
 let deck;
@@ -45,8 +45,6 @@ function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
-    document.getElementById("your-account").innerText = yourAccount;
-    document.getElementById("your-bet").innerText = yourBet;
     // console.log(hidden);
     // console.log(dealerSum);
     while (dealerSum < 17) {
@@ -103,11 +101,9 @@ function stay() {
     let message = "";
     if (yourSum > 21) {
         message = "You Lose!";
-        yourAccount -= yourBet;
     }
     else if (dealerSum > 21) {
         message = "You win!";
-        yourAccount += yourBet;
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
@@ -115,17 +111,14 @@ function stay() {
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";
-        yourAccount += yourBet;
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
-        yourAccount -= yourBet;
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("your-sum").innerText = yourSum;
     document.getElementById("results").innerText = message;
-    document.getElementById("your-account").innerText = yourAccount;
 }
 
 function getValue(card) {

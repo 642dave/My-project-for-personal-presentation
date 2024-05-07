@@ -64,7 +64,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-h2  {
+h2 {
     background-color: black;
     color: white;
     font-size: 30px;
@@ -117,4 +117,10 @@ h2  {
     background-color: black;
     font-size: 20px;
     color: white;
+}
+
+#player-zone {
+    position: absolute;
+    top: 50%;
+    right: 5%;
 }
