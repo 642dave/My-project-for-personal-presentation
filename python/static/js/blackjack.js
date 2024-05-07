@@ -106,6 +106,11 @@ function playSound2() {
     sound.play();
 }
 
+function playSound3() {
+    var sound = document.getElementById("tie-sound");
+    sound.play();
+}
+
 function stay() {
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
@@ -116,6 +121,7 @@ function stay() {
     let message = "";
     var winSound = document.getElementById("win-sound");
     var loseSound = document.getElementById("lose-sound");
+    var tieSound = document.getElementById("tie-sound");
 
     if (yourSum > 21) {
         message = "You Lose!";
@@ -130,6 +136,7 @@ function stay() {
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
         message = "Tie!";
+        tieSound.play();
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";

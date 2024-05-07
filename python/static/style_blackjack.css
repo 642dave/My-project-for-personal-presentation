@@ -64,6 +64,22 @@ body {
     transform: translate(-50%, -50%);
 }
 
+#button-new-game {
+    position: absolute;
+    top: 38%;
+    right: 11%;
+}
+
+#new-game a {
+    text-decoration: none;
+    background-color: black;
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+}
+
 h2 {
     background-color: black;
     color: white;
