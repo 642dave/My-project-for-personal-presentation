@@ -1,3 +1,4 @@
+
 let dealerSum = 0;
 let yourSum = 0;
 
@@ -47,6 +48,8 @@ function startGame() {
     dealerAceCount += checkAce(hidden);
     document.getElementById("your-account").innerText = yourAccount;
     document.getElementById("your-bet").innerText = yourBet;
+    var music = document.getElementById("background-music");
+    music.volume = 0.4;
     // console.log(hidden);
     // console.log(dealerSum);
     while (dealerSum < 17) {
@@ -91,6 +94,16 @@ function hit() {
         canHit = false;
     }
 
+}
+
+function playSound() {
+    var sound = document.getElementById("hit-cards");
+    sound.play();
+}
+
+function playSound2() {
+    var sound = document.getElementById("slapp-stay");
+    sound.play();
 }
 
 function stay() {
