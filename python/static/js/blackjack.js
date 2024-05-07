@@ -114,13 +114,18 @@ function stay() {
     document.getElementById("hidden").src = "./static/images/cards/" + hidden + ".png";
 
     let message = "";
+    var winSound = document.getElementById("win-sound");
+    var loseSound = document.getElementById("lose-sound");
+
     if (yourSum > 21) {
         message = "You Lose!";
+        loseSound.play();
         yourAccount -= yourBet;
     }
     else if (dealerSum > 21) {
         message = "You win!";
         yourAccount += yourBet;
+        winSound.play();
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
@@ -129,10 +134,12 @@ function stay() {
     else if (yourSum > dealerSum) {
         message = "You Win!";
         yourAccount += yourBet;
+        winSound.play();
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
         yourAccount -= yourBet;
+        loseSound.play();
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
