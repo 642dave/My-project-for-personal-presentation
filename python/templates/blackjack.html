@@ -15,7 +15,7 @@
     <audio id="hit-cards" src="static/sounds/hit-cards.mp3"></audio>
     <audio id="slapp-stay" src="static/sounds/slapp-stay.mp3"></audio>
     <audio id="win-sound" src="static/sounds/win-sound.mp3"></audio>
-    <audio id="lose-sound" src="static/sounds/lose-sound.mp3"></audio>
+    <audio id="loose-sound" src="static/sounds/loose-sound.mp3"></audio>
     <audio id="tie-sound" src="static/sounds/tie-sound.mp3"></audio>
 
     <div id="logo">
@@ -54,15 +54,17 @@
     </section>
 
     <div id="button-new-game">
-        <button id="new-game">
-            <a href="">New Game</a>
-        </button>
+        <a href="http://127.0.0.1:5000/blackjack"><button id="new-game">New Game</button></a>
     </div>
 
     <section id="player-zone">
         <h2>Your account: <span id="your-account"></span></h2>
         <h2>Your bet: <span id="your-bet"></span></h2>
     </section>
+
+    <div id="background-music-off">
+        <button onclick="playPause()">Music On Off</button>
+    </div>
     
 </body>
 </html>

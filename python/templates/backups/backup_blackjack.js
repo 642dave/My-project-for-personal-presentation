@@ -1,11 +1,12 @@
+
 let dealerSum = 0;
 let yourSum = 0;
 
 let dealerAceCount = 0;
 let yourAceCount = 0;
 
-let yourAccount = 0;
-let yourBet = 0;
+let yourAccount = 1000;
+let yourBet = 10;
 
 let hidden;
 let deck;
@@ -45,6 +46,11 @@ function startGame() {
     hidden = deck.pop();
     dealerSum += getValue(hidden);
     dealerAceCount += checkAce(hidden);
+    document.getElementById("your-account").innerText = yourAccount;
+    document.getElementById("your-bet").innerText = yourBet;
+
+    var music = document.getElementById("background-music");
+    music.volume = 0.4;
     // console.log(hidden);
     // console.log(dealerSum);
     while (dealerSum < 17) {
@@ -91,6 +97,21 @@ function hit() {
 
 }
 
+function playSound() {
+    var sound = document.getElementById("hit-cards");
+    sound.play();
+}
+
+function playSound2() {
+    var sound = document.getElementById("slapp-stay");
+    sound.play();
+}
+
+function playSound3() {
+    var sound = document.getElementById("tie-sound");
+    sound.play();
+}
+
 function stay() {
     dealerSum = reduceAce(dealerSum, dealerAceCount);
     yourSum = reduceAce(yourSum, yourAceCount);
@@ -99,27 +120,52 @@ function stay() {
     document.getElementById("hidden").src = "./static/images/cards/" + hidden + ".png";
 
     let message = "";
+    var winSound = document.getElementById("win-sound");
+    var loseSound = document.getElementById("loose-sound");
+    var tieSound = document.getElementById("tie-sound");
+
     if (yourSum > 21) {
         message = "You Lose!";
+        loseSound.play();
+        yourAccount -= yourBet;
+        updateDisplay();
     }
     else if (dealerSum > 21) {
         message = "You win!";
+        winSound.play();
+        yourAccount += yourBet;
+        updateDisplay();
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
         message = "Tie!";
+        tieSound.play();
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";
+        winSound.play();
+        yourAccount += yourBet;
+        updateDisplay();
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
+        loseSound.play();
+        yourAccount -= yourBet;
+        updateDisplay();
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("your-sum").innerText = yourSum;
     document.getElementById("results").innerText = message;
 }
+
+function updateDisplay() {
+    document.getElementById("your-account").innerText = yourAccount;
+    document.getElementById("your-bet").innerText = yourBet;
+    document.getElementById("dealer-sum").innerText = dealerSum;
+    document.getElementById("your-sum").innerText = yourSum;
+}
+
 
 function getValue(card) {
     let data = card.split("-"); // "4-C" -> ["4", "C"]
@@ -148,3 +194,33 @@ function reduceAce(playerSum, playerAceCount) {
     }
     return playerSum;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

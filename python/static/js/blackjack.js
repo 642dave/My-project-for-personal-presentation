@@ -6,7 +6,7 @@ let dealerAceCount = 0;
 let yourAceCount = 0;
 
 let yourAccount = 1000;
-let yourBet = 100;
+let yourBet = 10;
 
 let hidden;
 let deck;
@@ -48,6 +48,7 @@ function startGame() {
     dealerAceCount += checkAce(hidden);
     document.getElementById("your-account").innerText = yourAccount;
     document.getElementById("your-bet").innerText = yourBet;
+
     var music = document.getElementById("background-music");
     music.volume = 0.4;
     // console.log(hidden);
@@ -120,18 +121,20 @@ function stay() {
 
     let message = "";
     var winSound = document.getElementById("win-sound");
-    var loseSound = document.getElementById("lose-sound");
+    var loseSound = document.getElementById("loose-sound");
     var tieSound = document.getElementById("tie-sound");
 
     if (yourSum > 21) {
         message = "You Lose!";
         loseSound.play();
         yourAccount -= yourBet;
+        updateDisplay();
     }
     else if (dealerSum > 21) {
         message = "You win!";
-        yourAccount += yourBet;
         winSound.play();
+        yourAccount += yourBet;
+        updateDisplay();
     }
     //both you and dealer <= 21
     else if (yourSum == dealerSum) {
@@ -140,20 +143,29 @@ function stay() {
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";
-        yourAccount += yourBet;
         winSound.play();
+        yourAccount += yourBet;
+        updateDisplay();
     }
     else if (yourSum < dealerSum) {
         message = "You Lose!";
-        yourAccount -= yourBet;
         loseSound.play();
+        yourAccount -= yourBet;
+        updateDisplay();
     }
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("your-sum").innerText = yourSum;
     document.getElementById("results").innerText = message;
-    document.getElementById("your-account").innerText = yourAccount;
 }
+
+function updateDisplay() {
+    document.getElementById("your-account").innerText = yourAccount;
+    document.getElementById("your-bet").innerText = yourBet;
+    document.getElementById("dealer-sum").innerText = dealerSum;
+    document.getElementById("your-sum").innerText = yourSum;
+}
+
 
 function getValue(card) {
     let data = card.split("-"); // "4-C" -> ["4", "C"]
@@ -182,3 +194,30 @@ function reduceAce(playerSum, playerAceCount) {
     }
     return playerSum;
 }
+
+let isPlaying = false; 
+
+function playPause() {
+    var music = document.getElementById("background-music");
+    if (isPlaying) {
+        music.pause(); 
+    } else {
+        music.play(); 
+    }
+    isPlaying = !isPlaying; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

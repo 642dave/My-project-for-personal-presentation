@@ -70,16 +70,6 @@ body {
     right: 11%;
 }
 
-#new-game a {
-    text-decoration: none;
-    background-color: black;
-    font-size: 30px;
-    font-family: 'Times New Roman';
-    border: 2px solid white;
-    color: white;
-    padding: 10px 20px;
-}
-
 h2 {
     background-color: black;
     color: white;
@@ -135,8 +125,42 @@ h2 {
     color: white;
 }
 
+#button-new-game { 
+    position: absolute;
+}
+
+#button-new-game a {
+    text-decoration: none;
+}
+
+#button-new-game button {
+    width: 125px;
+    height: 50px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+}
+
 #player-zone {
     position: absolute;
     top: 50%;
     right: 5%;
+}
+
+#background-music-off {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+#background-music-off button {
+    width: auto;
+    height: auto;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Times New Roman';
+    font-size: 13px;
 }
