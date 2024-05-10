@@ -53,17 +53,29 @@
         <p id="results"></p>
     </section>
 
-    <div id="button-new-game">
-        <a href="http://127.0.0.1:5000/blackjack"><button id="new-game">New Game</button></a>
-    </div>
-
     <section id="player-zone">
         <h2>Your account: <span id="your-account"></span></h2>
         <h2>Your bet: <span id="your-bet"></span></h2>
     </section>
 
-    <div id="background-music-off">
-        <button onclick="playPause()">Music On Off</button>
+    <div id="betting-options">
+        <h3>***Choose your bet***</h3>
+        <select id="bet-selection">
+            <option value="moznost1">1$</option>
+            <option value="moznost2">5$</option>
+            <option value="moznost3">10$</option>
+            <option value="moznost4">20$</option>
+            <option value="moznost5">50$</option>
+        </select>
+    </div>
+
+    <div id="player-menu">
+        <ul id="game-menu">
+            <li><a href="http://127.0.0.1:5000/">Home</a></li>
+            <li><a href="http://127.0.0.1:5000/blackjack">New Game</a></li>
+            <li><a href="#polozka4">Log Out</a></li>
+            <li><a href="#polozka5" onclick="playPause()">Music ON OFF</a></li>
+        </ul>   
     </div>
     
 </body>

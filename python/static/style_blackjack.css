@@ -125,16 +125,28 @@ h2 {
     color: white;
 }
 
-#button-new-game { 
+#player-zone {
     position: absolute;
+    top: 50%;
+    right: 5%;
 }
 
-#button-new-game a {
-    text-decoration: none;
+#betting-options {
+    position: absolute;
+    top: 60%;
+    right: 10%;
 }
 
-#button-new-game button {
-    width: 125px;
+#betting-options h3 {
+    color: white;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+}
+
+select #bet-selection {
+    width: 100px;
     height: 50px;
     border: 2px solid white;
     background-color: black;
@@ -143,24 +155,27 @@ h2 {
     font-size: 20px;
 }
 
-#player-zone {
-    position: absolute;
-    top: 50%;
-    right: 5%;
-}
-
-#background-music-off {
+#player-menu {
     position: absolute;
     top: 5%;
     right: 5%;
 }
 
-#background-music-off button {
-    width: auto;
-    height: auto;
-    border: 2px solid white;
-    background-color: black;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
     color: white;
-    font-family: 'Times New Roman';
-    font-size: 13px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: underline;
 }
