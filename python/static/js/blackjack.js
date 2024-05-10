@@ -5,13 +5,20 @@ let yourSum = 0;
 let dealerAceCount = 0;
 let yourAceCount = 0;
 
-let yourAccount = 1000;
-let yourBet = 10;
+let yourAccount = 0;
+let yourBet = 1;
+let currentAccount = 0;
 
 let hidden;
 let deck;
 
 let canHit = true; //allows the player (you) to draw while yourSum <= 21
+
+function updateBet(value) {
+    yourBet = parseInt(value);
+    document.getElementById("your-bet").innerText = yourBet;
+}
+
 
 window.onload = function () {
     buildDeck();
@@ -140,6 +147,7 @@ function stay() {
     else if (yourSum == dealerSum) {
         message = "Tie!";
         tieSound.play();
+        updateDisplay();
     }
     else if (yourSum > dealerSum) {
         message = "You Win!";

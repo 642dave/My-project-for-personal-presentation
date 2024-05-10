@@ -195,6 +195,33 @@ function reduceAce(playerSum, playerAceCount) {
     return playerSum;
 }
 
+let isPlaying = false;
+
+function playPause() {
+    var music = document.getElementById("background-music");
+    if (isPlaying) {
+        music.pause();
+    } else {
+        music.play();
+    }
+    isPlaying = !isPlaying;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

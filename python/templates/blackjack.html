@@ -53,19 +53,21 @@
         <p id="results"></p>
     </section>
 
-    <section id="player-zone">
-        <h2>Your account: <span id="your-account"></span></h2>
-        <h2>Your bet: <span id="your-bet"></span></h2>
-    </section>
+    <div id="player-zone">
+        <section id="account-bet">
+            <p>Your account: <span id="your-account"></span></p>
+            <p>Your bet: <span id="your-bet"></span></p>
+        </section>
+    </div>
 
     <div id="betting-options">
         <h3>***Choose your bet***</h3>
-        <select id="bet-selection">
-            <option value="moznost1">1$</option>
-            <option value="moznost2">5$</option>
-            <option value="moznost3">10$</option>
-            <option value="moznost4">20$</option>
-            <option value="moznost5">50$</option>
+        <select id="bet-selection"  onchange="updateBet(this.value)">
+            <option value="1">1$</option>
+            <option value="5">5$</option>
+            <option value="10">10$</option>
+            <option value="20">20$</option>
+            <option value="50">50$</option>
         </select>
     </div>
 

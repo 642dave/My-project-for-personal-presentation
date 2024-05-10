@@ -6,8 +6,10 @@
 
 body {
     text-align: center;
+    background-color: black;
 }
 
+/* Logo */
 #logo img {
     width: 50px;
     position: absolute;
@@ -15,6 +17,7 @@ body {
     left: 2%;
 }
 
+/* Main titles */
 #casino-text {
     position: absolute;
     top: 23%;
@@ -32,11 +35,6 @@ body {
 
 #casino-text a {
     text-decoration: none;
-}
-
-/* Black Jack game */
-#background-image {
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
 }
 
 #background-image img {
@@ -62,21 +60,6 @@ body {
     top: 30%;
     left: 10%;
     transform: translate(-50%, -50%);
-}
-
-#button-new-game {
-    position: absolute;
-    top: 38%;
-    right: 11%;
-}
-
-h2 {
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    text-transform: uppercase;
-    letter-spacing: 2.2px;
-    word-spacing: 3.5px;
 }
 
 #black-jack-text h2 {
@@ -128,18 +111,31 @@ h2 {
 #player-zone {
     position: absolute;
     top: 50%;
-    right: 5%;
+    right: 9%;
+}
+
+section p {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+}
+
+select {
+    width: 60px;
+    height: 20px;
 }
 
 #betting-options {
     position: absolute;
-    top: 60%;
-    right: 10%;
+    top: 57%;
+    right: 8.5%;
 }
 
 #betting-options h3 {
     color: white;
     font-size: 10px;
+    margin-bottom: 5px;
     text-transform: uppercase;
     letter-spacing: 2.2px;
     word-spacing: 3.5px;
