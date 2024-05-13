@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
+    <!--<link rel="stylesheet" href="static/queries_blackjack.css">-->
     <link rel="stylesheet" href="static/style_blackjack.css">
     <!--<link rel="icon" href="{{ url_for('static', filename='/images/casino_favicon.png') }}" type="image/x-icon">-->
     <script src="static/js/blackjack.js"></script>
-    <link rel="stylesheet" href="static/queries_blackjack.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
 
     <div id="logout-message">
         {% if session['logged_in'] %}
-        <p>Welcome, player: <span class="nickname">{{ session['nickname'] }}!</p></span>
+        <p>Welcome, player {{ session['nickname'] }}! <a href="{{ url_for('log_out') }}">Log out</a> </p>
         {% else %}
         {% endif %}
     </div>
@@ -30,15 +31,13 @@
     </div>
 
     <div id="casino-text">
-        <a href="http://127.0.0.1:5000/"><h1>CASINO</h1></a>
+        <a href="http://127.0.0.1:5000/">
+            <h1>CASINO</h1>
+        </a>
     </div>
 
     <div id="black-jack-text">
         <h2>Black Jack</h2>
-    </div>
-
-    <div id="deck-of-cards">
-        <img src="static/images/deck-of-cards.png" alt="">
     </div>
 
     <div id="background-image">
@@ -73,7 +72,7 @@
 
     <div id="betting-options">
         <h3>***Choose your bet***</h3>
-        <select id="bet-selection"  onchange="updateBet(this.value)">
+        <select id="bet-selection" onchange="updateBet(this.value)">
             <option value="1">1$</option>
             <option value="5">5$</option>
             <option value="10">10$</option>
@@ -85,12 +84,12 @@
     <div id="player-menu">
         <ul id="game-menu">
             <li><a href="http://127.0.0.1:5000/">Home</a></li>
-            <li><a href="http://127.0.0.1:5000/blackjack" id="start-game">Start Game</a></li>
-            <li><a href="#" id="exit-game">Exit Game</a></li>
-            <li><a href="{{ url_for('log_out') }}">Log Out</a></li>
-            <li><a href="#" onclick="playPause()">Music ON OFF</a></li>
-        </ul>   
+            <li><a href="http://127.0.0.1:5000/blackjack">New Game</a></li>
+            <li><a href="#polozka4">Log Out</a></li>
+            <li><a href="#polozka5" onclick="playPause()">Music ON OFF</a></li>
+        </ul>
     </div>
-    
+
 </body>
+
 </html>

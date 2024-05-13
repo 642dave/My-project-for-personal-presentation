@@ -7,7 +7,6 @@ let yourAceCount = 0;
 
 let yourAccount = 0;
 let yourBet = 1;
-let currentAccount = 0;
 
 let hidden;
 let deck;
@@ -18,7 +17,6 @@ function updateBet(value) {
     yourBet = parseInt(value);
     document.getElementById("your-bet").innerText = yourBet;
 }
-
 
 window.onload = function () {
     buildDeck();
@@ -55,7 +53,6 @@ function startGame() {
     dealerAceCount += checkAce(hidden);
     document.getElementById("your-account").innerText = yourAccount;
     document.getElementById("your-bet").innerText = yourBet;
-
     var music = document.getElementById("background-music");
     music.volume = 0.4;
     // console.log(hidden);
@@ -203,29 +200,14 @@ function reduceAce(playerSum, playerAceCount) {
     return playerSum;
 }
 
-let isPlaying = false; 
+var isPlaying = false;
 
 function playPause() {
     var music = document.getElementById("background-music");
     if (isPlaying) {
-        music.pause(); 
+        music.pause();
     } else {
-        music.play(); 
+        music.play();
     }
-    isPlaying = !isPlaying; 
+    isPlaying = !isPlaying;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

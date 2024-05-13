@@ -1,20 +1,182 @@
-@media only screen and (max-width: 1200px) {
-    #casino-text {
-        left: 35%;
-        top: 17%;
+@media only screen and (max-width: 1400px) {
+    #player-menu {
+        right: 1%;
+    }
+
+    #player-menu li a {
+        padding: 14px 8px;
     }
 }
 
+@media only screen and (max-width: 1200px) {
+    #casino-text {
+        left: 12%;
+        top: 15%;
+    }
+
+    #black-jack-text {
+        left: 12%;
+        top: 20%;
+    }
+
+    #player-menu li a {
+        padding: 14px 2px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    #casino-text {
+        left: 15%;
+        top: 15%;
+    }
+
+    #black-jack-text {
+        left: 15%;
+        top: 21%;
+    }
+
+    #player-menu {
+        right: 1%;
+        top: 10%;
+    }
+
+    #player-menu li a {
+        padding: 14px 2px;
+    }
+
+    #dealer-cards img, #your-cards img {
+        width: 120px;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    #logo a img {
+        top: 1%;
+    }
+
+    #casino-text {
+        left: 19%;
+        top: 10%;
+    }
+    
+    #black-jack-text {
+        left: 19%;
+        top: 15%;
+    }
+
+    #tokens-image img  {
+        right: 1%;
+    }
+
+    #deck-of-cards {
+        display: none;
+    }
+
+    #tokens-image {
+        display: none;
+    }
+
+    #player-zone {
+        top: 90%;
+        right: 3%;
+    }
+
+    #betting-options {
+        top: 85%;
+        right: 3%;
+    }
+
+    #dealer-cards img, #your-cards img {
+        width: 100px;
+        height: auto;
+    }
+}
+
+
 @media only screen and (max-width: 600px) {
     #casino-text {
-        left: 45%;
-        top: 17%;
+        left: 50%;
+        top: 4%;
+    }
+
+    #black-jack-text {
+        top: 10%;
+        left: 50%;
+    }
+
+    #tokens-image img {
+        display: none;
+    }
+
+    #player-menu {
+        left: 20%;
+    }
+
+    #black-jack-game {
+        top: 50%;
+    }
+
+    #dealer-cards img, #your-cards img {
+        width: 94.5px;
+        height: auto;
+    }
+
+    #player-zone {
+        top: 90%;
+        right: 34%;
+    }
+
+    #betting-options {
+        top: 85%;
+        right: 34%;
     }
 }
 
 @media only screen and (max-width: 500px) {
     #casino-text {
         left: 50%;
-        top: 17%;
+        top: 5%;
+    }
+
+    #black-jack-text {
+        top: 11%;
+        left: 50%;
+    }
+
+    #black-jack-text h2 {
+        font-size: 25px;
+    }
+
+    #player-menu {
+        left: 10%;
+        top: 12%;
+    }
+
+    #black-jack-game {
+        top: 50%;
+    }
+
+    #dealer-cards, #your-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #dealer-cards img, #your-cards img {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        width: 90px;
+        margin: 1px;
+    }
+
+    #betting-options{
+        top: 85%;
+        right: 30%;
+    }
+
+    #player-zone {
+        right: 30%;
     }
 }

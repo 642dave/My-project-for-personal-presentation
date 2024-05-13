@@ -9,18 +9,44 @@ body {
     background-color: black;
 }
 
+#logout-message {
+    position: absolute;
+    top: 11%;
+    left: 8%;
+    text-align: center;
+}
+
+#logout-message p {
+    color: white;
+    font-size: 20px;
+    text-transform: lowercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+}
+
+#logout-message p a {
+    color: white;
+    text-decoration: none;
+    text-transform: lowercase;
+    border-bottom: 2px solid #fff;
+}
+
+.nickname {
+    color: rgb(122, 110, 39);
+}
+
 /* Logo */
 #logo img {
     width: 50px;
     position: absolute;
-    top: 10%;
+    top: 5%;
     left: 2%;
 }
 
 /* Main titles */
 #casino-text {
     position: absolute;
-    top: 23%;
+    top: 15%;
     left: 10%;
     transform: translate(-50%, -50%);
 }
@@ -37,27 +63,9 @@ body {
     text-decoration: none;
 }
 
-#background-image img {
-   height: 100vh;
-   background-attachment: fixed;
-}
-
-#tokens-image {
-    position: absolute;
-    top: 65%;
-    right: 5%;
-}
-
-#black-jack-game {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #black-jack-text {
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 10%;
     transform: translate(-50%, -50%);
 }
@@ -68,6 +76,36 @@ body {
     text-transform: uppercase;
     letter-spacing: 2.2px;
     word-spacing: 3.5px;
+}
+
+#deck-of-cards {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+}
+
+#deck-of-cards img {
+    height: auto;
+    width: 300px;
+    margin: 1px;
+}
+
+#background-image img {
+   height: 100vh;
+   background-attachment: fixed;
+}
+
+#tokens-image  {
+    position: absolute;
+    top: 65%;
+    right: 5%;
+}
+
+#black-jack-game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #dealer-cards img {
@@ -114,6 +152,16 @@ body {
     right: 9%;
 }
 
+h2 {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    word-spacing: 3.5px;
+    background-color: black;
+    display: inline-block;
+}
+
 section p {
     color: white;
     font-size: 20px;
@@ -135,7 +183,7 @@ select {
 #betting-options h3 {
     color: white;
     font-size: 10px;
-    margin-bottom: 5px;
+    margin-top: 5px;
     text-transform: uppercase;
     letter-spacing: 2.2px;
     word-spacing: 3.5px;
@@ -145,7 +193,6 @@ select #bet-selection {
     width: 100px;
     height: 50px;
     border: 2px solid white;
-    background-color: black;
     color: white;
     font-family: 'Times New Roman';
     font-size: 20px;
@@ -153,8 +200,8 @@ select #bet-selection {
 
 #player-menu {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 11%;
+    right: 2%;
 }
 
 ul {
